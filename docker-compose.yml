@@ -1,0 +1,10 @@
+services:
+  cupom-api:
+    build: .
+    container_name: cupom-api
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:h2:mem:cupomdb;DB_CLOSE_DELAY=-1
+      SPRING_H2_CONSOLE_ENABLED: "true"
+    restart: unless-stopped
